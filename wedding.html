@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Full Page Background Image | Progressive</title>
+<style>
+		* { margin: 0; padding: 0; }
+		
+		html { 
+			background: url(img/1.jpg) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		
+		#page-wrap { width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; border-radius: 10px  }
+		p { font-family: 'Great Vibes', cursive; font-size: 64px;}
+	</style>
+</head>
+<body>
+<div id="page-wrap">
+<p>Machi & Shaun
+</p>
+<h1 id="headline" style="display: flex; justify-content: center;">Countdown to the big day!</h1>
+  <div id="countdown" style="display: flex; justify-content: center;">
+    <ul>
+      <li><span id="days"></span> days</li>
+      <li><span id="hours"></span> Hours</li>
+      <br>
+      <li><span id="minutes"></span> Minutes</li>
+      <li><span id="seconds"></span> Seconds</li>
+    </ul>
+  </div>
+  <div class="message">
+    <div id="content">
+      <span class="emoji">🥳</span>
+      <span class="emoji">🎉</span>
+      <span class="emoji">🎂</span>
+    </div>
+  </div>
+</div>
+</div>
+<style>
+/* general styling */
+
+
+
+h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: table-row;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+
+.message {
+  font-size: 4rem;
+  display: none;
+  padding: 1rem;
+}
+
+.emoji {
+  padding: 0 .25rem;
+}
+
+</style>
+
+</body>
+<script>
+function count(wedding, second, minute, hour, day){
+	var countDown = new Date(wedding).getTime();
+	let now = new Date().getTime(),
+            distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          let headline = document.getElementById("headline"),
+              countdown = document.getElementById("countdown"),
+              content = document.getElementById("content");
+
+          headline.innerText = "It's our wedding!";
+          countdown.style.display = "none";
+          content.style.display = "block";
+
+          clearInterval(x);
+        }
+}
+
+(function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  let wedding = "Jun 27, 2021 13:30:00";
+  //let wedding = "May 1, 2021 23:54:00";
+  count(wedding, second, minute, hour, day);
+  var x = setInterval(function() {
+  	count(wedding, second, minute, hour, day)
+  }, 1000)
+  }());
+</script>
+</html>

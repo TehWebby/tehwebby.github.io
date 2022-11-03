@@ -1,0 +1,100 @@
+<div class=" blog-listing">
+    <div class="meta">
+      <h1>
+        What data types are supported in Javascript?
+      </h1>
+      
+    </div>
+<ul>
+<li>Boolean</li>
+<li>Null</li>
+<li>Undefined</li>
+<li>Number</li>
+<li>String</li>
+<li>Object</li>
+</ul>
+
+
+<h3>Boolean</h3>
+
+<p>Pretty standard across all languages, booleans are <code>true</code> and <code>false</code>. They're often used for conditional statements.</p>
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>if(hot) {
+  turnOnAircon();
+}
+</pre></td></tr></tbody></table></code></pre></div>
+<h3>Null and Undefined</h3>
+
+Check out this <a href="https://stackoverflow.com/a/5076962/2060008">stackoverflow link</a> for a detailed explaination
+
+<h3>Number</h3>
+
+<p>Unlike many other languages the number data type includes integers and floats.<br>
+  Example: 1, -2 and 3.43 are classed as a number data type. <br>This is different from many languages that have multiple data types to support different numbers.
+<br>JavaScript is good and bad in this way. It allows developers to worry less about small trivial but gives less control over the code.
+</p>
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>var num = 1;
+typeof num; // number
+
+var num = -2;
+typeof num; // number
+
+var num = 3.43;
+typeof num; // number
+</pre></td></tr></tbody></table></code></pre></div>
+<h3>String</h3>
+
+<p>As in most languages, JS strings are groupings of characters.</p>
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>"Hello World!";
+"I like cats";
+'Single quotes too';
+</pre></td></tr></tbody></table></code></pre></div>
+
+<h3>Object</h3>
+
+<div class="highlight"><pre class="highlight plaintext"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>var cat = { sound: "meow" };
+
+var fluffy = new Cat();
+
+var whiskers = new function() {
+    this.sound = "meow";
+}
+</pre></td></tr></tbody></table></code></pre></div>
+
+<h3>Others - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">Technically Objects in JS</a></h3>
+Array<br>
+Date<br>
+function
+
+<h2>Resources</h2>
+
+<ul>
+<li><a href="http://cs50.tv/2017/fall/">CS50</a></li>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript">Introduction to JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Objects</a></li>
+</ul>
+
+<h3>Website development - HTTP/HTML/CSS </h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bx3fw940Uho" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
